@@ -1,0 +1,60 @@
+
+POST http://localhost:3010/users/register
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super3"
+}
+####
+
+POST http://localhost:3010/users/login
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFxdWFtYW5AZG9taW5pby5lcyIsImlhdCI6MTY1MDMwNzg1Nn0.Iir97fs4DprIraGhbor76Cuz2eiF3Yj29i7dnzFArAE
+
+{
+"username":"aquaman@dominio.es", "password":"man$Super3"
+}
+####
+
+POST http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_database","create_role","create_table","create_view"]
+}
+
+####
+GET http://localhost:3000/users/aquaman@dominio.es
+
+###
+DELETE http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_database"]
+}
+
+####
+DELETE http://localhost:3000/users/grants
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "grants":["create_database","create_table"]
+}
+
+####
+PUT http://localhost:3000/users/grants
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFxdWFtYW5AZG9taW5pby5lcyIsImlhdCI6MTY0OTQzODkyMH0.gpAW4PR8UWWE7w--kE66n-G0y7z2r7b_jhDncqrtLp8
+
+{
+"username":"aquaman@dominio.es", "grants":["create_user","alter_table"]
+}
+
+###
+POST http://localhost:3000/users/user
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es"
+}
