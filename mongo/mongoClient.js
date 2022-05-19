@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 // Replace the uri string with your MongoDB deployment's connection string.
-const DBurl = "mongodb+srv://pauGuarch:Gatorron582@cluster0.7ewwn.mongodb.net/test";
+const DBurl = "mongodb+srv://<user>:<password>@cluster0.7ewwn.mongodb.net/test";
 const DBname = "test";
 const DBCollection = "movies";
 
